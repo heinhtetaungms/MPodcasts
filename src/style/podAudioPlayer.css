@@ -1,0 +1,33 @@
+.react-audio-player .controls{
+    background-color: #3498db;
+}
+
+.react-audio-player .play-pause {
+    /* Your styles for the play and pause button */
+    background-color: #3498db; /* Example background color */
+    color: #ffffff; /* Example text color */
+    border: none;
+    padding: 5px;
+    border-radius: 50%;
+  }
+
+.rhap_play-pause-button svg, .rhap_forward-button svg, .rhap_rewind-button svg,
+ .rhap_progress-indicator, .rhap_progress-filled{
+    color: #38b4de;
+}
+.rhap_progress-indicator, .rhap_progress-filled{
+    background: #38b4de !important;
+}
+
+.rhap_container{
+    border-radius: 10px !important;
+    background-color: #fff !important;
+}
+
+#rhap_current-time{
+    font-size: 12px !important;
+}
+.rhap_total-time{
+    font-size: 12px !important;
+}
+
