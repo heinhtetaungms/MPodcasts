@@ -78,6 +78,10 @@ const authStore = create((set) => {
 			set({ theme: newTheme });
 			Cookies.set('htheme', newTheme, { expires: 2 });
 		},
+		setToggleProfile: (newToggleProfile) => {
+			set({ profileToggle: newToggleProfile});
+			Cookies.set('hprofileToggle', newToggleProfile, {expires: 2});
+		},
 		logout: () => {
 			set({
 				token: null,
@@ -99,6 +103,7 @@ const authStore = create((set) => {
 			Cookies.remove('hjoinDate');
 			Cookies.remove('hrole');
 			Cookies.remove('toggle');
+			Cookies.remove('hprofileToggle');
 		},
 	};
 });

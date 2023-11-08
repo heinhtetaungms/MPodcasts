@@ -1,0 +1,119 @@
+/* Add this CSS to your stylesheet */
+.music-player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    box-shadow: 0px -1px 6px rgba(0, 0, 0, 0.1);
+    z-index: 20;
+    padding: 1rem;
+}
+
+
+
+.column-left {
+    flex: 0.3; /* Occupy remaining space in the container */
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Adjust the gap between the image and text */
+}
+
+.column-right {
+    flex: 1; /* Occupy remaining space in the container */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.column-left img {
+    width: 6rem; /* Adjust the width of the image */
+    height: 6rem; /* Adjust the height of the image */
+    border-radius: 0.5rem; /* Add rounded corners to the image */
+}
+
+.column-left h1 {
+    font-size: 1.2rem; /* Adjust the title font size */
+    font-weight: 600;
+}
+
+.column-left p {
+    font-size: 1rem; /* Adjust the writer font size */
+    color: #888888; /* Adjust the writer text color */
+}
+
+/* Adjust the styling for the AudioPlayer component as needed */
+.column-right .rhap_container {
+    background-color: transparent; /* Make the player background transparent */
+    box-shadow: none; /* Remove the player's box shadow */
+    border: none; /* Remove the player's border */
+}
+
+
+.react-audio-player .controls {
+    background-color: #3498db;
+}
+
+.react-audio-player .play-pause {
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.rhap_play-pause-button svg, .rhap_forward-button svg, .rhap_rewind-button svg,
+.rhap_progress-indicator, .rhap_progress-filled {
+    color: #38b4de;
+}
+
+.rhap_progress-indicator, .rhap_progress-filled {
+    background: #38b4de !important;
+}
+
+.rhap_container {
+    border-radius: 10px !important;
+    background-color: #fff !important;
+}
+
+#rhap_current-time {
+    font-size: 12px !important;
+}
+
+.rhap_total-time {
+    font-size: 12px !important;
+}
+
+
+
+/* Add this to your CSS */
+@keyframes slide {
+    0% {
+        transform: translateX(10%); /* Start off-screen to the right */
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.slide-title {
+    font-size: 1.25rem;
+    line-height: 2.5rem;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 90%; /* Adjust the width as needed */
+    overflow: hidden;
+    animation: slide 15s linear infinite; /* Adjust the duration as needed */
+}
+
+/* Add this to your CSS */
+.title-container {
+    max-width: 200%; /* Adjust the maximum width as needed */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 200%;
+}
+
+

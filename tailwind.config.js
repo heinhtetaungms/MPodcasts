@@ -44,8 +44,6 @@ export default {
             normal: '0',
             wide: '.025em',
             wider: '.05em',
-            widest: '.1em',
-            widest: '.25em',
         },
         extend: {
             opacity: {

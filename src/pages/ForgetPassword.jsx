@@ -6,7 +6,6 @@ import { ActionButton } from '../components/Button'
 import { Link, useNavigate } from 'react-router-dom'
 import {FaEnvelopeCircleCheck} from "react-icons/fa6"
 import { toast } from 'react-toastify';
-import topbg from '../assets/img/topbg.jpg'
 
 const ForgetPassword = () => {
     const navigate = useNavigate();

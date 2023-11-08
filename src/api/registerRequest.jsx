@@ -7,10 +7,8 @@ export const RegisterUser = ({firstName, lastName, email}) => {
     const res = axios
         .post(appLinkUrl, {firstName, lastName, email})
         .then(function (response) {
+            console.log("Response headers ", response);
             return (response);
         })
-        .catch(function (error) {
-            return (error);
-        });
     return res;
 }

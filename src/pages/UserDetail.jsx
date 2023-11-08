@@ -78,7 +78,7 @@ const UserDetail = () => {
           </div>
           <div className="flex flex-wrap ps-3">
             {userPost.map((podcast) => (
-              <div className=" m-2">
+              <div key={podcast.id} className=" m-2">
                 <Checkbox
                   label={podcast.title}
                   description={podcast.body}

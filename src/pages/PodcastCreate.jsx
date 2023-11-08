@@ -97,17 +97,11 @@ const PodcastCreate = () => {
                 onSubmit={handleCreateSubmit} // Use onSubmit to handle form submission
             >
                 <div className="mb-4">
-                    <label
-                        htmlFor="title"
-                        className="block text-gray-700 font-medium dark:text-white"
-                    >
+                    <label htmlFor="title" className="block text-gray-700 font-medium dark:text-white">
                         Title
                     </label>
-                    <input
-                        type="text"
-                        id="title"
-                        name="title"
-                        className="w-full px-4 py-2 border dark:border-white text-white rounded-lg focus:outline-none focus:border-blue-400 w-[50%]"
+                    <input type="text" id="title" name="title"
+                        className="w-full px-4 py-2 border dark:border-white rounded-lg focus:outline-none focus:border-blue-400"
                         required
                         onChange={(e) =>
                             setInputData({ ...inputData, title: e.target.value })

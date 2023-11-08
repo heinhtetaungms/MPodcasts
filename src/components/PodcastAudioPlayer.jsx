@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import authStore from '../zustand/authStore';
-import {FaTimes} from 'react-icons/fa';
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 import {StreamAudio} from '../api/streamAudio';
+import '../style/custom-audio-player.css';
+import {FaTimes} from "react-icons/fa";
 
 const PodcastAudioPlayer = (props) => {
     const {title, writer, fileName, imageUrl, podcastId, isAudioPlaying, onClose} = props;
@@ -21,7 +22,6 @@ const PodcastAudioPlayer = (props) => {
     };
 
     useEffect(() => {
-        console.log("podcastId........", podcastId)
         // Fetch audio data when fileName, podcastId, or authToken changes
         StreamAudio({fileName, podcastId, userId, authToken})
             .then((response) => {
@@ -46,18 +46,18 @@ const PodcastAudioPlayer = (props) => {
 
     return (
         isAudioPlaying && audioUrl ? (
-            <div
-                className="music-player fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 transition-opacity duration-300">
-                <div
-                    className="w-96 bg-white shadow-lg shadow-gray-500 transition-opacity duration-300 shadow-md rounded-lg flex flex-col relative">
-                    <button className="close-button top-4 right-4 absolute" onClick={onClose}>
-                        <FaTimes size={24}/>
-                    </button>
-                    <div className="flex flex-col items-center justify-center">
-                        <img src={imageUrl} alt="Music Cover"
-                             className="music-cover w-56 h-56 mt-2 mb-3 border-rounded object-cover rounded-full"/>
-                        <h1 className="text-xl font-semibold text-black text-center mb-2">{title}</h1>
-                        <p className="text-md text-gray-600 text-center mb-4">{writer}</p>
+            <div className="music-player fixed bottom-0 left-0 right-0 bg-gray-300 shadow-md z-20 p-4">
+                <div className="flex items-center">
+                    <div className="column-left">
+                        <img src={imageUrl} alt="Music Cover" className="w-24 h-24 rounded object-cover" />
+                        <div>
+                            <div className="title-container">
+                                <h1 className="font-semibold slide-title">{title}</h1>
+                            </div>
+                            <p className="text-md mt-2">{writer}</p>
+                        </div>
+                    </div>
+                    <div className="column-right">
                         <AudioPlayer
                             src={audioUrl}
                             autoPlay={isPlaying}
@@ -66,6 +66,9 @@ const PodcastAudioPlayer = (props) => {
                         />
                     </div>
                 </div>
+                {/*<button className="close-button top-4 right-4 absolute" onClick={onClose}>
+                    <FaTimes size={24} />
+                </button>*/}
             </div>
         ) : null
     );

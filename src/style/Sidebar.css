@@ -1,0 +1,24 @@
+/* Sidebar.css */
+.sidebar-transition {
+    transition: width 0.5s ease;
+}
+
+/* Light theme styles */
+
+.menu-item:hover {
+    color: lightblue; /* Hover text color in light theme */
+}
+
+.menu-item.active-menu {
+    color: #0080ff; /* Active menu text color in light theme */
+}
+
+
+/* Dark theme styles */
+.dark .menu-item:hover {
+    color: lightblue; /* Hover text color in dark theme */
+}
+
+.dark .menu-item.active-menu {
+    color: #0080ff; /* Active menu text color in dark theme */
+}

@@ -1,4 +1,4 @@
-import './HeartReaction.css';
+import '../style/HeartReaction.css';
 import {useEffect, useState} from 'react';
 import {LikeRequest} from '../api/likeReactionRequest';
 import authStore from '../zustand/authStore';
