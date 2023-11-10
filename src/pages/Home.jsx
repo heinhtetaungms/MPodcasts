@@ -230,7 +230,7 @@ const Home = () => {
                             <div className="flex flex-wrap">
                                 {dataForRecent.map((data) => {
                                     return (
-                                        <div className="p-2 my-3 flex flex-wrap flex-col" key={data.id}>
+                                        <div className="p-2 my-3 flex flex-wrap flex-col min-w-[20%] max-w-[20%]" key={data.id}>
                                             <div className="object-center object-cover h-[200px] relative">
                                                 <img src={data.imageUrl} alt="my image"
                                                      className="h-full rounded-lg opacity-100"/>
@@ -241,7 +241,7 @@ const Home = () => {
                                                                        initialLikeStatus={data.liked}/>
                                                     </span>
                                                 </div>
-                                                <div className="absolute bottom-0 right-0">
+                                                <div className="absolute bottom-0 right-[30%]">
                                                     <span>
                                                         <FontAwesomeIcon
                                                             icon={faCirclePlay}
