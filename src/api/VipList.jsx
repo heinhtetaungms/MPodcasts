@@ -14,8 +14,6 @@ export const VipList = async ({authToken}) => {
 
         })
         .then((response) => {
-            console.log("########333", response.data);
-
             return response.data;
         });
     return res;

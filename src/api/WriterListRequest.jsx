@@ -11,7 +11,6 @@ export const WriterListRequest = async ({authToken}) => {
             },
         })
         .then((response) => {
-
             console.log("Response headers ", response);
             return response;
         });

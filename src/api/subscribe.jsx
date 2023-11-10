@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const PayMentData = ({subscriptionId, userId, paymentType, token}) => {
+export const Subscribe = ({subscriptionId, userId, paymentType, token}) => {
     const apiUrl = import.meta.env.VITE_API_URL;
     const appLinkUrl = `${apiUrl}/subscription/subscribe`;
 
@@ -21,7 +21,3 @@ export const PayMentData = ({subscriptionId, userId, paymentType, token}) => {
         });
     return res;
 }
-
-// subscriptionId: slectPacket,
-//     userId: userId,
-//     paymentType: paymentData,

@@ -1,8 +1,5 @@
-import React from "react";
-import bg1 from "../assets/img/bg1.jpg";
+
 import "../style/foruserCard.css";
-import { FaShoppingCart } from "react-icons/fa";
-import { FaHeart } from "react-icons/fa";
 import HeartReaction from "./HeartReaction";
 
 export const Checkbox = ({ label,image, writer, description, prize,date }) => {

@@ -12,7 +12,7 @@ import {FaEye, FaEyeSlash} from "react-icons/fa";
 import googleLogo from '../../assets/img/google-logo.png'
 import facebookLogo from '../../assets/img/fb-logo.png'
 import githubLogo from '../../assets/img/github-logo.png'
-import {OAuth2Request, redirectToOAuth2} from "../../api/oauth2Request";
+import {OAuth2Request} from "../../api/oauth2Request";
 
 
 const Login = () => {
@@ -64,22 +64,7 @@ const Login = () => {
 
     // Function to make oauth2Login
     const oauth2Login = async (oauthType) => {
-
-        /*await OAuth2Request({oauthType})
-            .then((response) => {
-                if (response.data.httpResponse === 200) {
-                    handleLoginSuccess(response);
-                    toast.success('Login success');
-                    setTimeout(() => {
-                        navigate('/');
-                        window.location.reload();
-                    }, 1000);
-                }
-            })
-            .catch((error) => {
-                toast.error(error.response?.data.message)
-            });*/
-        redirectToOAuth2({oauthType})
+        OAuth2Request({oauthType})
     };
 
     const handleSubmit = (e) => {

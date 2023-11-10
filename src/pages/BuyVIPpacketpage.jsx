@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from "react";
-import bg1 from "../assets/img/bg1.jpg";
+import {useEffect, useState} from "react";
+import banner from "../assets/img/banner.png";
 
 import authStore from "../zustand/authStore";
 import {FaFlag, FaStar, FaStickyNote} from "react-icons/fa";
@@ -22,7 +22,6 @@ const VipPage = () => {
             state: {selectedVip},
         });
     };
-    console.log("dfdfdfdfdfdfdfdfdfdfdfdf", selectedVip);
 
     const [vipData, setvipData] = useState([]);
 
@@ -40,7 +39,7 @@ const VipPage = () => {
         <div className="h-screen relative ">
             <div className="relative ">
                 <div className="bg-secondary w-full h-[300px]">
-                    <img src={bg1} alt="" className="h-[300px] w-full"/>
+                    <img src={banner} alt="" className="h-[300px] w-full"/>
                 </div>
                 <div
                     className="absolute bottom-[-10px] py-7  w-full position flex items-center text-white flex-col"

@@ -11,6 +11,7 @@ import PodcastAudioPlayer from "../components/PodcastAudioPlayer";
 import {PodcastViewData} from "../api/getPodcastViewData";
 import {PodcastLikeData} from "../api/getPodcastLikeData";
 import {RecentData} from "../api/RecentData";
+import {toast} from "react-toastify";
 
 const Home = () => {
     const [authToken] = authStore((state) => [state.token]);
@@ -56,24 +57,18 @@ const Home = () => {
         RecentData({authToken}).then((response) => {
             if (response.httpResponse === 200) {
                 setDataForRecent(response.data);
-            } else {
-                throw new Error("Failed to fetch candidates");
             }
-        });
+        }).catch((error) => toast.error(error.response?.data.message));
         PodcastViewData({authToken}).then((response) => {
             if (response.httpResponse === 200) {
                 setPodcastViewList(response.data);
-            } else {
-                throw new Error("Failed to fetch candidates");
             }
-        });
+        }).catch((error) => toast.error(error.response?.data.message));
         PodcastLikeData({authToken}).then((response) => {
             if (response.httpResponse === 200) {
                 setPodcastLikeData(response.data);
-            } else {
-                throw new Error("Failed to fetch candidates");
             }
-        });
+        }).catch((error) => toast.error(error.response?.data.message));
     }, [authToken]);
 
     return (

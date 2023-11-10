@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import paymenttwo from "../assets/img/paymenttwo.jpg";
 import {useLocation, useNavigate} from "react-router-dom";
 import authStore from "../zustand/authStore";
-import {PayMentData} from "../api/payMentDataforUser";
+import {Subscribe} from "../api/subscribe";
 
 
 const PaymentPage = () => {
@@ -11,16 +11,10 @@ const PaymentPage = () => {
     const store = authStore.getState();
     const slectPacket = location.state?.selectedVip || "";
     const [authToken] = authStore((state) => [state.token]);
-    const [inputData, setInputData] = useState({
-        subscriptionId: "",
-        userId: "",
-        paymentType: "",
-    });
 
     const [userId] = authStore((state) => [state.userId]);
     const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("Visa");
     const [paymentData, setpaymentData] = useState("Visa");
-    const [statausforUser, setStatusForUser] = useState("ready");
 
     const handlePaymentMethodChange = (e) => {
         setSelectedPaymentMethod(e.target.value);
@@ -35,7 +29,7 @@ const PaymentPage = () => {
     const handleCreateSubmit = (e) => {
         console.log("blar");
         e.preventDefault();
-        PayMentData({
+        Subscribe({
             subscriptionId: slectPacket,
             userId: userId,
             paymentType: paymentData,
@@ -46,7 +40,7 @@ const PaymentPage = () => {
                 if (response.data.httpResponse === 200) {
                     console.log(response.data.httpResponse);
                     navigate("/", {
-                        state: {statausforUser},
+                        
                     });
                 }
             })
@@ -54,32 +48,6 @@ const PaymentPage = () => {
             });
     };
 
-    // const formData = new FormData();
-
-    //   formData.append("subscriptionId", slectPacket);
-    //   formData.append("userId", userId);
-    //   formData.append("paymentType",paymentData );
-
-    // const handleCreateSubmit = async(e) => {
-    //   e.preventDefault();
-    //   try {
-    //     const response = await fetch("https://g4backend.onrender.com/api/subscription/subscribe", {
-    //       method: "POST",
-    //       body: formData,
-    //       headers: {
-    //         Authorization: `Bearer ${authToken}`,
-    //       },
-    //     });
-
-    //       navigate("/", {
-    //         state: { statausforUser },
-    //       });
-
-    //   } catch (error) {
-    //     console.error(error);
-    //   }
-
-    // };
     const handlePayment = () => {
         navigate("/");
     };

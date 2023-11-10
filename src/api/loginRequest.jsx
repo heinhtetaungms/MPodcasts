@@ -24,3 +24,21 @@ export const ForgetPasswordRequest = async ({email}) => {
         });
     return res;
 }
+
+export const GetCurrentUser = async ({authToken}) => {
+
+    const apiUrl = import.meta.env.VITE_API_URL;
+    const currentUserUrl = `${apiUrl}/user/me`;
+    console.log(currentUserUrl);
+    console.log("authToken......", authToken)
+    const res = await axios
+        .get(currentUserUrl, {
+            headers: {
+                Authorization: `Bearer ${authToken}`,
+            },
+        })
+        .then((response) => {
+            return response.data;
+        });
+    return res;
+};

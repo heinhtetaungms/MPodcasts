@@ -1,10 +1,6 @@
-import { React } from "react";
 import { useState } from "react";
-import bg1 from "../assets/img/bg1.jpg";
-import { Button } from "../components/Button";
 import { Checkbox } from "../components/CardForUserDetail";
-import { FaThumbsUp } from "react-icons/fa";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { ForUserData } from "../api/userDetail";
 import authStore from "../zustand/authStore";
 import { useEffect } from "react";
