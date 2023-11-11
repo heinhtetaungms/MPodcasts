@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import React from "react";
 
 const FormAction = ({type, text, name}) => {
 
@@ -8,7 +7,7 @@ const FormAction = ({type, text, name}) => {
             {name === 'button' ? (
                 <button
                     type={type}
-                    className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm text-white font-medium rounded-md bg-[#80B3FF] hover:bg-[#687EFF] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 mt-10"
+                    className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm text-white font-medium rounded-md bg-[#93BFCF] hover:bg-[#6096B4] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 mt-10"
                 >
                     {text}
                 </button>
